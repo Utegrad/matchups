@@ -1,0 +1,51 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    {% block styling %}
+        {# Load Twitter Bootstrap http://getbootstrap.com/ #}
+        {# With Spacelab theme from http://bootswatch.com/amelia/ #}
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    {% endblock styling %}
+
+</head>
+<body>
+    <div class="container">
+    <h1>{{ message }}</h1>
+        <div class="jumbotron">
+            <h1>Jumbotron</h1>
+            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+        </div>
+        <div class="bs-component">
+            <div class="modal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>One fine body…</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+{% block javascript %}
+    <script src="{% static 'jquery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+{% endblock javascript %}
+</body>
+</html>

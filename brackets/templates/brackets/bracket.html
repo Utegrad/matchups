@@ -1,0 +1,57 @@
+{% extends "brackets/base.html" %}
+{% load static %}
+{% block title %}Begining bracket{% endblock %}
+{% block styling %}
+    <link rel="stylesheet" href="{% get_static_prefix %}themes/{{ theme }}/css/bootstrap.css">
+{% endblock styling %}
+{% block content %}
+    <h1>{{ message }}</h1>
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Quarter</th>
+      <th>Semi</th>
+      <th>Final</th>
+      <th>Champion</th>
+        <th>Final</th>
+        <th>Semi</th>
+        <th>Quarter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="vertical-align: middle"><a href="#" class="btn btn-primary">Contestant 1</a></td>
+        <td rowspan="2" style="vertical-align: middle"><a href="#" class="btn btn-success">Semi C1</a></td>
+        <td rowspan="4" style="vertical-align: middle"><a href="#" class="btn btn-info">Finals C1</a></td>
+        <td rowspan="4" style="vertical-align: middle"><a href="#" class="btn btn-danger">Champion</a></td>
+        <td rowspan="4" style="vertical-align: middle"><a href="#" class="btn btn-info">Finals C5</a></td>
+        <td rowspan="2" style="vertical-align: middle"><a href="#" class="btn btn-success">Semi C5</a></td>
+        <td style="vertical-align: middle"><a href="#" class="btn btn-primary">Contestant 5</a></td>
+    </tr>
+    <tr>
+        <td style="vertical-align: middle"><a href="#" class="btn btn-primary">Contestant 2</a></td>
+        <td style="vertical-align: middle"><a href="#" class="btn btn-primary">Contestant 6</a></td>
+    </tr>
+    <tr>
+        <td style="vertical-align: middle"><a href="#" class="btn btn-primary">Contestant 3</a></td>
+        <td rowspan="2" style="vertical-align: middle"><a href="#" class="btn btn-success">Semi C4</a></td>
+        <td rowspan="2" style="vertical-align: middle"><a href="#" class="btn btn-success">Semi C7</a></td>
+        <td style="vertical-align: middle"><a href="#" class="btn btn-primary">Contestant 7</a></td>
+    </tr>
+    <tr>
+        <td style="vertical-align: middle"><a href="#" class="btn btn-primary">Contestant 4</a></td>
+        <td style="vertical-align: middle"><a href="#" class="btn btn-primary">Contestant 8</a></td>
+    </tr>
+  </tbody>
+</table>
+<!--<div class="container">
+    <hr>
+    <a href="#" class="btn btn-default">Default</a>
+    <a href="#" class="btn btn-primary">Primary</a>
+    <a href="#" class="btn btn-success">Success</a>
+    <a href="#" class="btn btn-info">Info</a>
+    <a href="#" class="btn btn-warning">Warning</a>
+    <a href="#" class="btn btn-danger">Danger</a>
+    <a href="#" class="btn btn-link">Link</a>
+</div>  -->
+{% endblock %}

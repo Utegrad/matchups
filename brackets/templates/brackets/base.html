@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block title %}Master Template Title{% endblock %}</title>
+    {% block favicon %}
+        <link rel="icon" type="image/png" href="{% static 'img/favicon.ico'%}">
+    {% endblock favicon %}
+    {% block styling %}
+        {# Load Twitter Bootstrap http://getbootstrap.com/ #}
+        {# With Spacelab theme from http://bootswatch.com/amelia/ #}
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    {% endblock styling %}
+</head>
+<body>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+{% block javascript %}
+    <script src="{% static 'jquery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+{% endblock javascript %}
+</body>

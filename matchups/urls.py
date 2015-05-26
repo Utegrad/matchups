@@ -15,7 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^brackets$', include('brackets.urls', namespace="brackets")),
+    url(
+        r'^favicon.ico$',
+        RedirectView.as_view(
+            url=staticfiles_storage.url('img/favicon.ico'),
+            permanent=False),
+        name="favicon"
+    ),
 ]

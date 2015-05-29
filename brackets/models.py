@@ -1,8 +1,10 @@
 from django.db import models
+from datetime import datetime
 
 def img_upload_dir_path(instance, filename):
-    """files to be saved to MEDIA_ROOT/uploads/%Y_%m_%d_filename"""
-    return 'uploads/%Y_%m_%d_{0}'.format(filename)
+    """files to be saved to MEDIA_ROOT/uploads/TIMESTAMP_filename"""
+    date = datetime.strftime(datetime.now(),"%Y-%m-%d_%H%M%S")
+    return 'uploads/{0}_{1}'.format(date, filename)
 
 
 # Create your models here.

@@ -105,3 +105,9 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),
                     )
 MEDIA_ROOT = (os.path.join(BASE_DIR, "media"))
 MEDIA_URL = '/media/'
+
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, "templates"),)
+
+LOGIN_URL = 'matchups_login'
+LOGOUT_URL = 'matchups_logout'
+LOGIN_REDIRECT_URL = 'brackets:brackets_home'
